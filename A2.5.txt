@@ -1,0 +1,52 @@
+1. Explain what is a cluster and what is a hadoop cluster
+Cluster:
+      * A cluster is a group of resources and servers which acts like a single system 
+      * It supports load balancing and parallel processing.
+      * It is a logical unit of file storage and it was managed by operating system.      
+    
+Hadoop cluster:
+
+      * Hadoop cluster is a type of computational cluster.
+      * It is designed for storing and analyzing huge amount of unstructured data.
+      * Hadoop cluster run open source distributed software on commodity computers.
+      * Hadoop cluster have two machines as masters namely, NameNode and Job Tracker.
+      * Rest of the machines are both DataNode and TasTracker.
+      * Hadoop clusters are used for speeding up the data analysis process
+      * They are highly fault tolerent because data is copied onto other clusters.
+
+
+2. Explain the components of Hadoop 1.x
+  * components of Hadoop 1.x
+     1.HDFS:
+          Hadoop is a Hadoop Distributed File System.In HDFS the data is stored using Commodity Hardware.There are two nodes in HDFS namely,
+                          * NameNode
+                          * DataNode
+         * NameNode:
+                   - NameNode is a Master node.
+                   - Name nodes are used to save Meta Data about files and direrctory.
+                   - They contain information like which bocks are stored in which datanode.
+         * DataNode:
+                   - DataNodes are slave node.
+                   - The default size of DataNode is 64MB.
+                   - It stores the Application's actual data.
+                   - It is used for checking whether NameNode is active or not.
+     2.Map Reduce:
+                     
+          Map Reduce is used for scheduling and processing the data.Map and Reduce are two important functions in MapReduce.
+                        
+          There are two components in MapReduce.They are,
+                               1. Job Tracker
+                               2. Task Tracker
+          * Job Tracker:
+            
+                  - Job Trackers are used to assign map reduce jobs to the Task Tracker in cluster nodes.
+                  - Some times it resends the  same task again when task tracker fails to perform a task.
+                  - It controls the execution of mapreduce jobs.
+                  - Job Tracker determines the location of the data by using NameNode.
+          * Task Tracker:
+            
+                  - Task tracker executes all the jobs which are given by Job Tracker.
+                  - It is used for sending status of jobs to the Job Tracker.
+                  - Every Task Tracker have a set of slots.These slots defines the number of tasks can be assigned to a task tracker.
+                  - It uses seperate JVM processes for given tasks.
+                  - It runs individual Map Reduce jobs on DataNodes.
